@@ -1,0 +1,234 @@
+{
+	"info": {
+		"_postman_id": "a6365c02-db17-4246-9da6-73a2d31a7e7f",
+		"name": "Game API",
+		"description": "**JSON** criado para testes manuais com métodos _POST, GET, DELETE e PATCH_ na **Game API**",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Game",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"The Legend of Zelda: A Link to the Past\",\n\t\"console\": \"Super Nintendo\",\n\t\"min\":\"5\",\n\t\"max\":\"300\",\n\t\"quantity\":\"1\",\n\t\"genre\":\"ADVENTURE\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/games",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"games"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Game 2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Fire Emblem: Awakening\",\n\t\"console\": \"Nintendo 3DS\",\n\t\"min\":\"8\",\n\t\"max\":\"100\",\n\t\"quantity\":\"50\",\n\t\"genre\":\"STRATEGY\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/games",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"games"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Games",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqYXZhaW51c2UiLCJleHAiOjE1OTE2NzAwODgsImlhdCI6MTU5MTY1MjA4OH0.j6nd_s7VFvPVbh4abKrjeaYxgmDCxMxc0O18lPz2juONf3zvKBO7vx-w2WO2b_BJnOl5vAI_5DLg5RrgIZ5WEg",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/games",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"games"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get game by name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/games/name/The Legend of Zelda: A Link to the Past",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"games",
+						"name",
+						"The Legend of Zelda: A Link to the Past"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get game by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/games/id/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"games",
+						"id",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete beer by id",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/games/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"games",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Increment beer stock",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"quantity\": 2\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/beers/1/increment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"beers",
+						"1",
+						"increment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Decrement beer stock",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"quantity\": 2\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/beers/1/decrement",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"beers",
+						"1",
+						"decrement"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
