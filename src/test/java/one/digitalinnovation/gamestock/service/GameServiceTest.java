@@ -43,7 +43,7 @@ public class GameServiceTest {
     private GameService gameService;
 
     @Test
-    void whenGameInformedThenItShouldBeCreated() throws GameAlreadyRegisteredException {
+    void whenGameInformedThenItShouldBeCreated() throws GameAlreadyRegisteredException, GameStockLoweredException {
         // given
         GameDTO expectedGameDTO = GameDTOBuilder.builder().build().toGameDTO();
         Game expectedSavedGame = gameMapper.toModel(expectedGameDTO);

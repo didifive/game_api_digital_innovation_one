@@ -7,6 +7,7 @@ import io.swagger.annotations.ApiResponses;
 import one.digitalinnovation.gamestock.dto.GameDTO;
 import one.digitalinnovation.gamestock.exception.GameAlreadyRegisteredException;
 import one.digitalinnovation.gamestock.exception.GameNotFoundException;
+import one.digitalinnovation.gamestock.exception.GameStockLoweredException;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
@@ -19,7 +20,7 @@ public interface GameControllerDocs {
             @ApiResponse(code = 201, message = "Success game creation"),
             @ApiResponse(code = 400, message = "Missing required fields or wrong field range value.")
     })
-    GameDTO createGame(GameDTO gameDTO) throws GameAlreadyRegisteredException;
+    GameDTO createGame(GameDTO gameDTO) throws GameAlreadyRegisteredException, GameStockLoweredException;
 
     @ApiOperation(value = "Returns game found by a given name")
     @ApiResponses(value = {

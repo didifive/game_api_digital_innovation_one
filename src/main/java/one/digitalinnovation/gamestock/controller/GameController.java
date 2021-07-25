@@ -32,7 +32,7 @@ public class GameController implements GameControllerDocs {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public GameDTO createGame(@RequestBody @Valid GameDTO gameDTO) throws GameAlreadyRegisteredException {
+    public GameDTO createGame(@RequestBody @Valid GameDTO gameDTO) throws GameAlreadyRegisteredException, GameStockLoweredException {
         return gameService.createGame(gameDTO);
     }
 

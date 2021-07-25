@@ -23,11 +23,14 @@ public class GameService {
     private final GameRepository gameRepository;
     private final GameMapper gameMapper = GameMapper.INSTANCE;
 
-    public GameDTO createGame(GameDTO gameDTO) throws GameAlreadyRegisteredException {
+    public GameDTO createGame(GameDTO gameDTO) throws GameAlreadyRegisteredException, GameStockLoweredException {
         verifyIfIsAlreadyRegistered(gameDTO.getName());
         Game game = gameMapper.toModel(gameDTO);
-        Game savedGame = gameRepository.save(game);
-        return gameMapper.toDTO(savedGame);
+        if (game.getQuantity() >= game.getMin()) {
+            Game savedGame = gameRepository.save(game);
+            return gameMapper.toDTO(savedGame);
+        }
+        throw new GameStockLoweredException(game.getId(), game.getQuantity(), game.getMin());
     }
 
     public GameDTO findByName(String name) throws GameNotFoundException {

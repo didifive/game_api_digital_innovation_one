@@ -18,7 +18,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"name\": \"The Legend of Zelda: A Link to the Past\",\n\t\"console\": \"Super Nintendo\",\n\t\"min\":\"5\",\n\t\"max\":\"300\",\n\t\"quantity\":\"1\",\n\t\"genre\":\"ADVENTURE\"\n}"
+					"raw": "{\n\t\"name\": \"The Legend of Zelda: A Link to the Past\",\n\t\"console\": \"Super Nintendo\",\n\t\"min\":\"5\",\n\t\"max\":\"300\",\n\t\"quantity\":\"5\",\n\t\"genre\":\"ADVENTURE\"\n}"
 				},
 				"url": {
 					"raw": "http://localhost:8080/api/v1/games",
@@ -167,7 +167,7 @@
 			"response": []
 		},
 		{
-			"name": "Increment beer stock",
+			"name": "Increment game stock",
 			"request": {
 				"method": "PATCH",
 				"header": [
@@ -181,7 +181,7 @@
 					"raw": "{\n\t\"quantity\": 2\n}"
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/v1/beers/1/increment",
+					"raw": "http://localhost:8080/api/v1/games/1/increment",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -190,7 +190,7 @@
 					"path": [
 						"api",
 						"v1",
-						"beers",
+						"games",
 						"1",
 						"increment"
 					]
@@ -199,7 +199,7 @@
 			"response": []
 		},
 		{
-			"name": "Decrement beer stock",
+			"name": "Decrement game stock",
 			"request": {
 				"method": "PATCH",
 				"header": [
@@ -213,7 +213,7 @@
 					"raw": "{\n\t\"quantity\": 2\n}"
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/v1/beers/1/decrement",
+					"raw": "http://localhost:8080/api/v1/games/1/decrement",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -222,7 +222,7 @@
 					"path": [
 						"api",
 						"v1",
-						"beers",
+						"games",
 						"1",
 						"decrement"
 					]
